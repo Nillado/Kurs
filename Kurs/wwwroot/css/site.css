@@ -1,0 +1,145 @@
+﻿
+.footer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    left:0px;
+    bottom:0px;
+    color: bisque;
+    line-height: 40px;
+    background-image: url(../images/footer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
+
+
+.headerup {
+    display: flex;
+    position: sticky;
+    line-height: 80px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-image: url(../images/headerup.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headerdown {
+    display: flex;
+    justify-content: space-between;
+    background-image: url(../images/headerdown.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+
+.main {
+
+    padding-top: 1rem;
+    display: flex;
+    background-image: url(../images/back/back10.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 18rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+.logopos{
+    margin-top:30px;
+}
+
+.menupos {
+    margin-top: 10px;
+    display: flex;
+    align-items: stretch;
+    grid-gap:3em;
+    color: bisque;
+    font-size: 24px;
+    font-family: Onyx;
+}
+
+
+h2{
+    color:orange;
+}
+
+p {
+    color: bisque;
+    font-size: 16px;
+}
+
+
+
+
+@media (min-width: 380px) {
+    .container {
+        max-width: 340px;
+    }
+
+    .menupos {
+        font-size: 14px;
+    }
+
+    .main {
+        padding-bottom: 2rem;
+        font-size: 10px;
+    }
+}
+
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+
+    }
+
+    .menupos {
+        font-size: 16px;
+    }
+
+    .main {
+        padding-bottom: 7rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .menupos {
+        font-size: 18px;
+    }
+
+    .main {
+        padding-bottom: 10rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .main {
+        padding-bottom: 14rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .main {
+        padding-bottom: 18rem;
+    }
+
+}

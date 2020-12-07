@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kurs</title>
+    
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+   
+    <div class="headerup">
+        <div class="container">
+
+            <div class="logopos">
+                <a class ="nav-link" href="/"><img src="~/images/logo.png" /></a>
+                </div>
+            </div>
+        </div>
+
+    <div class="headerdown">
+        
+            <div class="container">
+                <div class="menupos">
+
+                    <a class="nav-link" href="/Home/Index"><p>Главная</p></a>
+
+                    <a class="nav-link" href="/Home/Profile"> <p>Профиль</p></a>
+                        <a class="nav-link" href="/Home/About"> <p>О нас</p></a>
+                    <a class="nav-link" href="/Home/Blog"><p>Блоги</p> </a>
+</div>
+            </div>
+    </div>
+    
+
+    <div class="main">
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <p>Gergel/Volkov</p>
+        </div>
+    </footer>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
