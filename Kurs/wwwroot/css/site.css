@@ -1,16 +1,22 @@
 ﻿
+
+.ContentBlock {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 4em;
+}
+
 .footer {
     display: flex;
     position: relative;
     width: 100%;
-    left:0px;
-    bottom:0px;
+    left: 0px;
+    bottom: 0px;
     color: bisque;
     line-height: 40px;
     background-image: url(../images/footer.png);
     background-repeat: no-repeat;
     background-size: cover;
- 
 }
 
 
@@ -37,18 +43,39 @@
 
 .main {
 
-    padding-top: 1rem;
+    padding-top: 4rem;
     display: flex;
     background-image: url(../images/back/back10.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 18rem;
+    
 }
 
 .container {
     max-width: 1000px;
     margin: 0px auto;
     padding: 0px 15px;
+}
+
+
+.containerBlockLeft {
+    display: flex;
+    max-width: 1000px;
+    grid-gap: 3em;
+    margin: 0px auto;
+    padding: 0px 15px;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.containerblockRight {
+    display: flex;
+    max-width: 1000px;
+    grid-gap: 3em;
+    margin: 0px auto;
+    padding: 0px 15px;
+    align-items: stretch;
+    justify-content: flex-end;
 }
 
 .logopos{
@@ -66,8 +93,9 @@
 }
 
 
-h2{
-    color:orange;
+h2 {
+    color: bisque;
+    font-size: 34px;
 }
 
 p {
@@ -139,7 +167,7 @@ p {
     }
 
     .main {
-        padding-bottom: 18rem;
+        padding-bottom: 16rem;
     }
 
 }
