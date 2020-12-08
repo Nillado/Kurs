@@ -66,6 +66,7 @@ header, footer{
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
+   
 }
 
 .columns_column {
