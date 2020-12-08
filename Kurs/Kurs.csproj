@@ -11,4 +11,22 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Data\Contexts\Db\" />
+    <Folder Include="wwwroot\storage\avarars\" />
+    <Folder Include="wwwroot\storage\music\" />
+    <Folder Include="wwwroot\storage\pictures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
 </Project>

@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kurs.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 namespace Kurs
 {
@@ -23,6 +27,13 @@ namespace Kurs
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string dbConnection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<UserProfileContext>(options => options.UseSqlServer(dbConnection));
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new PathString("/Account/Login");
+                });
             services.AddControllersWithViews();
         }
 
@@ -44,6 +55,7 @@ namespace Kurs
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -51,11 +63,12 @@ namespace Kurs
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Blog}/{id?}");
             });
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                UserProfileContext userProfileContext = scope.ServiceProvider.GetRequiredService<UserProfileContext>();
+            }
         }
     }
 }
