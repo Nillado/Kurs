@@ -9,51 +9,31 @@
 </head>
 
 <body>
-   
-    <div class="headerup">
+    <header>
         <div class="container">
+        <div class="logopos">
+            <a class="nav-link" href="/"><img src="~/images/logo.png" /></a>
+        </div>
+        </div>
+    </header>
 
-            <div class="logopos">
-                <a class ="nav-link" href="/"><img src="~/images/logo.png" /></a>
-                </div>
-            </div>
+    <div id="main">
+
+        <div class="container">
+            @RenderBody()
+        </div>
         </div>
 
-    <div class="headerdown">
-        
+        <footer>
             <div class="container">
-                <div class="menupos">
-
-                    <a class="nav-link" href="/Home/Index"><p>Главная</p></a>
-
-                    <a class="nav-link" href="/Home/Profile"> <p>Профиль</p></a>
-                        <a class="nav-link" href="/Home/About"> <p>О нас</p></a>
-                    <a class="nav-link" href="/Home/Blog"><p>Блоги</p> </a>
-</div>
+                <fp>Gergel/Volkov</fp> <fp>группа АИ-183</fp> <fp>Курсовая работа</fp> 
             </div>
-    </div>
-    
-
-    <div class="main">
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-    </div>
+        </footer>
 
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            <p>Gergel/Volkov</p>
-        </div>
-    </footer>
-
-
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
 </body>
 </html>
